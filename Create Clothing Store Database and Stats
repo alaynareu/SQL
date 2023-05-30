@@ -1,0 +1,34 @@
+--Create a grocery store database
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, season TEXT, quantity INTEGER, price INTEGER, wear TEXT);
+ 
+INSERT INTO clothing_store VALUES(1, "summer", 5, 10.50, "informal wear");
+INSERT INTO clothing_store VALUES(2, "summer", 11, 25.99, "formal wear");
+INSERT INTO clothing_store VALUES(3, "spring", 13, 15.34, "informal wear");
+INSERT INTO clothing_store VALUES(4, "fall", 21, 18.55, "informal wear");
+INSERT INTO clothing_store VALUES(5, "winter", 28, 15.99, "informal wear");
+INSERT INTO clothing_store VALUES(6, "spring", 10, 28.75, "formal wear");
+INSERT INTO clothing_store VALUES(7, "summer", 19, 12.84, "informal wear");
+INSERT INTO clothing_store VALUES(8, "fall", 32, 30.09, "informal wear");
+INSERT INTO clothing_store VALUES(9, "spring", 8, 22.94, "formal wear");
+INSERT INTO clothing_store VALUES(10, "summer", 11, 25.99, "formal wear");
+INSERT INTO clothing_store VALUES(11, "winter", 22, 8.80, "informal wear");
+INSERT INTO clothing_store VALUES(12, "fall", 28, 18.25, "formal wear");
+INSERT INTO clothing_store VALUES(13, "fall", 22, 28.99, "formal wear");
+INSERT INTO clothing_store VALUES(14, "summer", 10, 45.35, "formal wear");
+INSERT INTO clothing_store VALUES(15, "spring", 15, 22.55, "informal wear");
+
+--display the database ordered by price.
+SELECT * FROM clothing_store
+ORDER BY price desc;
+
+--what is the avg price of clothes in the season summer?
+SELECT AVG(price) "avg summer season price"
+FROM clothing_store
+where season='summer';
+
+--what are the 5 most expensive prices?
+SELECT season, wear, price
+FROM clothing_store
+order by price desc 
+limit 5;
